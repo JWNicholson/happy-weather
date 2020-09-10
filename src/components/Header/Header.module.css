@@ -2,4 +2,8 @@
     display:flex;
     justify-content: center;
     padding: 1.5em;
+    background:rgba(0,0,0, 0.9);
+    color:aliceblue;
+    margin-bottom: 2em;    
+    width:100%;
 }

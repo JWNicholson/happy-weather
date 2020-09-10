@@ -6,14 +6,15 @@ import {
 } from '@material-ui/core';
 
 
+
 function WeatherCard(
     
     ) {
 
     return (
-        <Grid container spacing={3} m={4} direction="column" alignContent="center">
+        <Grid container  spacing={3} direction="column" alignContent="center">
            
-                  <Grid item xs={12} md={6} alignSelf="center">
+                  <Grid item xs={12} md={6} alignSelf="center" >
                        {/* render time & date */}
                     
                         <Box>

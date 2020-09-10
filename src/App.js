@@ -11,20 +11,21 @@ import Header from './components/Header/Header';
 
 function App() {
   return (
+    <>
+    <Header />
     <Container maxWidth="md" className={styles.App}>
       
-    
-    <Header />
-
     {/* user search input  */}
 
-     
+
       {/* render weather conditions */}
       <GetWeather />
      
-     
+      </Container>
+      
      <Footer />
-    </Container>
+     </>
+    
   );
 }
 

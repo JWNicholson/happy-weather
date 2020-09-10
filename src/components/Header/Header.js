@@ -7,12 +7,11 @@ import {
 const Header = () => {
     return (
     <header className={styles.header}>
-        <Typography variant="h2" component="h1">
+        <Typography variant="h3" component="h1">
         Happy Weather
-        </Typography>
-       
+        </Typography> 
     </header>
-    )
+    );
 }
 
 export default Header;

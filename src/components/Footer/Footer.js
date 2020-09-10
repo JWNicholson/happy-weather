@@ -1,21 +1,15 @@
-import React from 'react'
+import React from 'react';
+
+import styles from './Footer.module.css'
 
 const Footer = () => {
     let newDate = new Date().getFullYear();
     return (
-        <footer>
-            <div className="footer-legal">
+        <footer className={styles.footer}>
             <p>&copy; {newDate} John Nicholson</p>
-            </div>
-            <div className="footer-social">
-                <div className="contact-ctnr">
-                    email me
-                </div>
-                <div className="social-links-ctnr">
-                    Git Linked Behanced
-                </div>
-            </div>
-
+            <p>
+            <a href="mailto:john.nicholson812@gmail.com">john.nicholson812@gmail.com</a>
+            </p>
         </footer>
     )
 }
