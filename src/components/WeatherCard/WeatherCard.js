@@ -1,41 +1,49 @@
 import React from 'react';
-import styles from './WeatherCard.module.css';
+//import styles from './WeatherCard.module.css';
 import Clock from '../Clock/Clock';
 import { 
-    Card, Grid 
+     Grid, Typography, Box,  
 } from '@material-ui/core';
 
+
 function WeatherCard(
-    // {
-    //  locationName,
-    //  main,
-    //  description,
-    //  mainTemp,
-    //  feels_like,
-    //  weatherIcon,
-    // }
     
     ) {
 
     return (
-        <Grid  item  xs={12} className={styles.wthrCard}>
-                   <Card >
+        <Grid container spacing={3} m={4} direction="column" alignContent="center">
+           
+                  <Grid item xs={12} md={6} alignSelf="center">
                        {/* render time & date */}
-                    <>              
-                        <Clock />
-                    </>
+                    
+                        <Box>
+                    <Clock />
+                    </Box> 
+                   
                     {/* render current weather */}
-                   <h2>Current weather for Louisville</h2>
-                     <h3>Temp: 82 <span>f&deg;</span></h3>
-                      <h3>Feels like 97 <span>f&deg;</span></h3>
-                      <h3>Main Conditions: Clouds</h3>
+                    <Typography variant="h5">
+                      Current weather for Louisville
+                    </Typography>
+                    <Typography variant="h6">
+                      Temp: 82 <span>f&deg;</span>
+                     </Typography>
+                     <Typography varian="h6">
+                       Feels like 97 <span>f&deg;</span>
+                     </Typography>
+                     <Typography >
+                         Main Conditions: Clouds
+                     </Typography>
+                     
+                     <Box >
                       <img src={"http://openweathermap.org/img/wn/02d@2x.png"} alt="weather icon"/>
-                      <h4>few clouds</h4> 
-                   </Card>
-                    
-        </Grid>
-
-                    
+                      <Typography >
+                        few clouds
+                      </Typography>
+                      </Box>
+           
+                </Grid>
+              
+         </Grid>   
 
        
     )

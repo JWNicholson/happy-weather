@@ -13,7 +13,7 @@ function App() {
   return (
     <Container maxWidth="md" className={styles.App}>
       
-    <Grid className={styles.contentWrapper}>
+    
     <Header />
 
     {/* user search input  */}
@@ -22,7 +22,7 @@ function App() {
       {/* render weather conditions */}
       <GetWeather />
      
-      </Grid>
+     
      <Footer />
     </Container>
   );
