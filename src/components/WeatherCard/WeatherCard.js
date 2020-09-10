@@ -12,6 +12,7 @@ function WeatherCard(
 
     return (
         <div className="wthr-card">
+            {/** check if weather data exists- if yes check temp to assigne appropriate background (hot or cold) else null */}
                     {locationName ? 
                      <>
                      <h2>Current weather for {locationName}</h2>
@@ -22,7 +23,7 @@ function WeatherCard(
                       <h4>{description}</h4> 
                       </>
                     : 
-                    <h2 className="render-error">I couldn't find that information. Are you sure you spelled the city right?</h2>
+                    <h2 className="error">I couldn't find that information. Are you sure you spelled the city right?</h2>
                     }
                     
         </div>

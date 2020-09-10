@@ -15,7 +15,7 @@ const location = "Louisville";
 const impUnits = "imperial";
 //const metricUnits="metric";
 
-//set states
+//set states - query, weather
 const [locationID, setLocationID] = useState('');
 const [locationName, setLocationName] = useState('');
 const [main, setMain] = useState('');
@@ -25,7 +25,8 @@ const [feels_like, setFeelsLike]= useState('');
 const [weatherIcon, setWeatherIcon] = useState('');
 
 useEffect(() => {
-//axios request
+//axios api request
+//set weather state with results
 Axios
     .get(`${BASEURL}q=${location}&units=${impUnits}&appid=${KEY}`)
         .then((response) => {
@@ -43,8 +44,7 @@ Axios
           .catch((error) => {
               alert("Fetch error: ", error);
           })
-
-         
+      
 }, [BASEURL,KEY,location]);
 
     return (
