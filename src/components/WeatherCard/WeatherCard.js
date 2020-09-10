@@ -1,33 +1,45 @@
-import React from 'react'
+import React from 'react';
+import styles from './WeatherCard.module.css';
+import Clock from '../Clock/Clock';
+import { 
+    Card, Grid 
+} from '@material-ui/core';
 
 function WeatherCard(
-    {
-     locationName,
-     main,
-     description,
-     mainTemp,
-     feels_like,
-     weatherIcon,
-    }) {
+    // {
+    //  locationName,
+    //  main,
+    //  description,
+    //  mainTemp,
+    //  feels_like,
+    //  weatherIcon,
+    // }
+    
+    ) {
 
     return (
-        <div className="wthr-card">
-            {/** check if weather data exists- if yes check temp to assigne appropriate background (hot or cold) else null */}
-                    {locationName ? 
-                     <>
-                     <h2>Current weather for {locationName}</h2>
-                     <h3>Temp: {mainTemp} <span>f&deg;</span></h3>
-                      <h3>Feels like {feels_like} <span>f&deg;</span></h3>
-                      <h3>Main Conditions: {main}</h3>
-                      <img src={"http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png"} alt="weather icon"/>
-                      <h4>{description}</h4> 
-                      </>
-                    : 
-                    <h2 className="error">I couldn't find that information. Are you sure you spelled the city right?</h2>
-                    }
+        <Grid  item  xs={12} className={styles.wthrCard}>
+                   <Card >
+                       {/* render time & date */}
+                    <>              
+                        <Clock />
+                    </>
+                    {/* render current weather */}
+                   <h2>Current weather for Louisville</h2>
+                     <h3>Temp: 82 <span>f&deg;</span></h3>
+                      <h3>Feels like 97 <span>f&deg;</span></h3>
+                      <h3>Main Conditions: Clouds</h3>
+                      <img src={"http://openweathermap.org/img/wn/02d@2x.png"} alt="weather icon"/>
+                      <h4>few clouds</h4> 
+                   </Card>
                     
-        </div>
+        </Grid>
+
+                    
+
+       
     )
 }
 
 export default WeatherCard
+
