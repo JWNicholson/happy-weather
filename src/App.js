@@ -3,20 +3,14 @@ import React from 'react';
 import Clock from './components/Clock/Clock'
 
 import './App.css';
+import GetWeather from './components/GetWeather/GetWeather';
 
 function App() {
-  // api key and url
- const api = {
-   baseUrl: process.env.REACT_APP_WTHR_API_BASE_URL,
-   key: process.env.REACT_APP_WTHR_API_KEY
- }
+ 
 
  //build todays date - 
 
-  let d = new Date();
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const year =  new Date().getFullYear();
+  
 
 
  //set states - query, weather
@@ -26,8 +20,9 @@ function App() {
 
   return (
     <div className="happy-wthr-app">
+      <header>
       <h1>Happy Weather</h1>
-
+      </header>
     {/** check if weather data exists- if yes check temp to assigne appropriate background (hot or cold) else null */}
 
     <main className="content-wrapper">
@@ -41,7 +36,12 @@ function App() {
       {/* render temp */}
 
       {/* render weather conditions */}
+      <GetWeather />
+     
       </main>
+      <footer>
+        FOOTER
+      </footer>
     </div>
   );
 }
