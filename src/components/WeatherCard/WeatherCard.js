@@ -5,11 +5,17 @@ import {
      Grid, Typography, Box,  
 } from '@material-ui/core';
 
+function capitalize_eachWord (str){
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
 
 
 function WeatherCard(
-    
     ) {
+
+    let description = capitalize_eachWord("foo bar");
+
 
     return (
         <Grid container  spacing={3} direction="column" alignContent="center">
@@ -38,7 +44,7 @@ function WeatherCard(
                      <Box >
                       <img src={"http://openweathermap.org/img/wn/02d@2x.png"} alt="weather icon"/>
                       <Typography >
-                        few clouds
+                        {description}
                       </Typography>
                       </Box>
            
