@@ -8,3 +8,9 @@
     box-shadow: -1px 1px 5px -1px rgba(0, 0, 0, 0.75);
     text-shadow: 2px 2px 5px rgba(170, 170, 170, 1);
 }
+
+.error {
+    color:firebrick;
+    font-weight: bold;
+    font-style: italic;
+  }

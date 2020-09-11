@@ -55,7 +55,7 @@ function WeatherCard(
             </Box>
       </Grid>
     :
-    <h2 className="error">I couldn't find that information. Are you sure you spelled the city right?</h2>
+    <h2 className={styles.error}>I couldn't find that information. Are you sure you spelled the city right?</h2>
         }
 </Grid>  
     )
