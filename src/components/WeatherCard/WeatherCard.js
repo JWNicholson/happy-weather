@@ -1,9 +1,14 @@
 import React from 'react';
-//import styles from './WeatherCard.module.css';
+import styles from './WeatherCard.module.css';
 import Clock from '../Clock/Clock';
 import { 
      Grid, Typography, Box,  
 } from '@material-ui/core';
+
+
+function capitalize_eachWord (str){
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
 
 
 function WeatherCard(
@@ -16,16 +21,16 @@ function WeatherCard(
      weatherIcon,
     }) {
 
+    let capDescription = capitalize_eachWord(description);
+
     return (
         <Grid container  spacing={3} direction="column" alignContent="center">
            
-        <Grid item xs={12} md={6} alignSelf="center" >
+        <Grid item xs={12} md={6} alignSelf="center" className={styles.weatherCard}>
              {/* render time & date */}
-          
-              <Box>
-          <Clock />
+          <Box>
+            <Clock />
           </Box> 
-         
           {/* render current weather */}
           <Typography variant="h5">
             Current weather for {locationName}
@@ -39,14 +44,13 @@ function WeatherCard(
            <Typography >
                Main Conditions: {main}
            </Typography>
-           
+           {/* render weather icon and description */}
            <Box >
              <img src={"http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png"} alt="weather icon"/>
               <Typography >
-                {description}
+                {capDescription}
               </Typography>
             </Box>
- 
       </Grid>
     
 </Grid>  
