@@ -25,6 +25,8 @@ function WeatherCard(
 
     return (
         <Grid container  spacing={3} direction="column" alignContent="center">
+        {/** check if weather data exists- if yes check temp to assigne appropriate background -hot or cold(future feature) else error message */}
+        {locationName && main ? 
            
         <Grid item xs={12} md={6} alignSelf="center" className={styles.weatherCard}>
              {/* render time & date */}
@@ -52,7 +54,9 @@ function WeatherCard(
               </Typography>
             </Box>
       </Grid>
-    
+    :
+    <h2 className="error">I couldn't find that information. Are you sure you spelled the city right?</h2>
+        }
 </Grid>  
     )
 }
