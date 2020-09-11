@@ -36,10 +36,10 @@ function WeatherCard(
             Current weather for {locationName}
           </Typography>
           <Typography variant="h6">
-            Temp: {mainTemp} <span>f&deg;</span>
+            Temp: {Math.round(mainTemp)} <span>F&deg;</span>
            </Typography>
            <Typography variant="h6">
-             Feels like {feels_like} <span>f&deg;</span>
+             Feels like {Math.round(feels_like)} <span>F&deg;</span>
            </Typography>
            <Typography >
                Main Conditions: {main}

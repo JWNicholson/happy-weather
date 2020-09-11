@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './App.module.css';
 import {
-  Container, Grid
+  Container
 }from '@material-ui/core';
 
 
