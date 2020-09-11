@@ -3,6 +3,7 @@ import styles from './Header.module.css'
 import {
     Typography
 } from  '@material-ui/core';
+import GetWeather from '../GetWeather/GetWeather';
 
 const Header = () => {
     return (
@@ -10,6 +11,7 @@ const Header = () => {
         <Typography variant="h3" component="h1">
         Happy Weather
         </Typography> 
+
     </header>
     );
 }
