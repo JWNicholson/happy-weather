@@ -1,4 +1,10 @@
-import React from 'react'
+import React from 'react';
+//import styles from './WeatherCard.module.css';
+import Clock from '../Clock/Clock';
+import { 
+     Grid, Typography, Box,  
+} from '@material-ui/core';
+
 
 function WeatherCard(
     {
@@ -11,22 +17,39 @@ function WeatherCard(
     }) {
 
     return (
-        <div className="wthr-card">
-            {/** check if weather data exists- if yes check temp to assigne appropriate background (hot or cold) else null */}
-                    {locationName ? 
-                     <>
-                     <h2>Current weather for {locationName}</h2>
-                     <h3>Temp: {mainTemp} <span>f&deg;</span></h3>
-                      <h3>Feels like {feels_like} <span>f&deg;</span></h3>
-                      <h3>Main Conditions: {main}</h3>
-                      <img src={"http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png"} alt="weather icon"/>
-                      <h4>{description}</h4> 
-                      </>
-                    : 
-                    <h2 className="error">I couldn't find that information. Are you sure you spelled the city right?</h2>
-                    }
-                    
-        </div>
+        <Grid container  spacing={3} direction="column" alignContent="center">
+           
+        <Grid item xs={12} md={6} alignSelf="center" >
+             {/* render time & date */}
+          
+              <Box>
+          <Clock />
+          </Box> 
+         
+          {/* render current weather */}
+          <Typography variant="h5">
+            Current weather for {locationName}
+          </Typography>
+          <Typography variant="h6">
+            Temp: {mainTemp} <span>f&deg;</span>
+           </Typography>
+           <Typography variant="h6">
+             Feels like {feels_like} <span>f&deg;</span>
+           </Typography>
+           <Typography >
+               Main Conditions: {main}
+           </Typography>
+           
+           <Box >
+             <img src={"http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png"} alt="weather icon"/>
+              <Typography >
+                {description}
+              </Typography>
+            </Box>
+ 
+      </Grid>
+    
+</Grid>  
     )
 }
 

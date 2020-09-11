@@ -1,11 +1,19 @@
-import React from 'react'
+import React from 'react';
+import styles from './Header.module.css'
+import {
+    Typography
+} from  '@material-ui/core';
+
 
 const Header = () => {
     return (
-    <header>
-        <h1>Happy Weather</h1>
+    <header className={styles.header}>
+        <Typography variant="h3" component="h1">
+        Happy Weather
+        </Typography> 
+
     </header>
-    )
+    );
 }
 
-export default Header
+export default Header;
