@@ -3,7 +3,6 @@ import styles from './Header.module.css'
 import {
     Typography
 } from  '@material-ui/core';
-import GetWeather from '../GetWeather/GetWeather';
 
 const Header = () => {
     return (

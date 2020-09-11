@@ -1,5 +1,5 @@
 import React from 'react';
-//import styles from './WeatherCard.module.css';
+import styles from './WeatherCard.module.css';
 import Clock from '../Clock/Clock';
 import { 
      Grid, Typography, Box,  
@@ -20,7 +20,7 @@ function WeatherCard(
     return (
         <Grid container  spacing={3} direction="column" alignContent="center">
            
-                  <Grid item xs={12} md={6} alignSelf="center" >
+                  <Grid item xs={12} md={6} alignSelf="center" className={styles.weatherCard}>
                        {/* render time & date */}
                     
                         <Box>
@@ -32,10 +32,10 @@ function WeatherCard(
                       Current weather for Louisville
                     </Typography>
                     <Typography variant="h6">
-                      Temp: 82 <span>f&deg;</span>
+                      Temp: 82 <span>F&deg;</span>
                      </Typography>
                      <Typography varian="h6">
-                       Feels like 97 <span>f&deg;</span>
+                       Feels like 97 <span>F&deg;</span>
                      </Typography>
                      <Typography >
                          Main Conditions: Clouds
